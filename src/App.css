@@ -1,3 +1,43 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: radial-gradient(#D5F3FF, #51B4E8);
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+}
+
+
+
+/***** header *****/
+
+/***** Card *****/
+
+
+.weather-card {
+  background: linear-gradient(#E5f2ff, #d5f3ff);
+  margin: auto;
+  max-width: 400px;
+  color: #51B4E8;
+  border-radius: 4.85px;
+  filter: drop-shadow(0px 4.85px 2px rgba(0, 0, 0, 0.25));
+}
+
+.card-head{
+  font-size: 79px;
+}
+
+.btn-change-units {
+  margin-top: 15px;
+  width: 178px;
+  height: 38px;
+  background: #38a0d8;
+  border-radius: 4.85px;
+  color: white;
+  border: none;
+  /*filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.25));*/
+  filter: drop-shadow(0px 4.85px 2px rgba(0, 0, 0, 0.25));
+} 
+
 /***** slider button *****/
 
 .switch {

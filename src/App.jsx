@@ -10,7 +10,7 @@ function App() {
         <nav>
           <ul>
             <li>Weather app</li>
-            <li><button><i class='bx bx-search-alt-2'></i></button><input type="text" /></li>
+            <li><button><i className='bx bx-search-alt-2'></i></button><input type="text" /></li>
             <li>
               <label className="switch">
                 <input type="checkbox"/>

@@ -18,7 +18,7 @@ const Clima = ({coords}) => {
 
     const [allWeather, setAllWeather] = useState({})
     const [weather, setWeather] = useState({})
-    const [isCelsius, setIsCelsius] = useState(false)
+    const [isCelsius, setIsCelsius] = useState(true)
 
 
     useEffect(() => {
@@ -36,8 +36,6 @@ const Clima = ({coords}) => {
         setIsCelsius(!isCelsius)
     }
 
-    /*`/iconos/${allWeather?.weather[0].icon}.svg`*/
-    /*allWeather?.weather[0].description*/
     return(
         <>
             <section>

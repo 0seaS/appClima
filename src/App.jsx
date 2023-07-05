@@ -1,6 +1,7 @@
 
 import Loader from './components/Loader';
-import Clima from './components/Clima'
+import Clima from './components/Clima';
+import Header from './components/Header';
 import './App.css'
 import { useEffect, useState } from 'react';
 
@@ -49,23 +50,13 @@ function App() {
     })
   }, [])
 
+
+
   return (
     <>
       {isLoading && <Loader />}
-      <header>
-        <nav>
-          <ul>
-            <li>Weather app</li>
-            <li><button><i className='bx bx-search-alt-2'></i></button><input type="text" placeholder='Busca una ciudad'/></li>
-            <li>
-              <label className="switch">
-                <input type="checkbox"/>
-                <span className="slider round"></span>
-              </label>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <Header></Header>
+      
       <Clima coords={coords}></Clima>
     </>
   )

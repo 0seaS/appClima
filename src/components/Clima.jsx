@@ -1,27 +1,20 @@
 
-import axios, { Axios } from "axios"
+import axios from "axios"
 import { useState, useEffect } from "react"
-const Clima = () => {
 
+const Clima = ({coords}) => {
 
-    const [latitude, setLatitude] = useState(0)
-    const [longitude, setLongitude] = useState(0)
+    // const [latitude, setLatitude] = useState(0)
+    // const [longitude, setLongitude] = useState(0)
 
-    //let latitude = 0
-    //let longitude = 0
+    // useEffect(() => {
+    //     navigator.geolocation.getCurrentPosition((pos) => {
+    //         const crd = pos.coords;
+    //         setLatitude(crd.latitude)
+    //         setLongitude(crd.longitude)
+    //     })
+    // },[])
 
-    useEffect(() => {
-        navigator.geolocation.getCurrentPosition((pos) => {
-            const crd = pos.coords;
-            // console.log("Your current position is:");
-            // console.log(`Latitude : ${crd.latitude}`);
-            // console.log(`Longitude: ${crd.longitude}`);
-            // console.log(`More or less ${crd.accuracy} meters.`);
-            
-            setLatitude(crd.latitude)
-            setLongitude(crd.longitude)
-        })
-    },[])
 
     const [allWeather, setAllWeather] = useState({})
     const [weather, setWeather] = useState({})
@@ -30,18 +23,14 @@ const Clima = () => {
 
     useEffect(() => {
         axios
-        .get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&lang=sp&appid=510f0eaa72c51a328e4614b9e40d2fb5`)
+        .get(`https://api.openweathermap.org/data/2.5/weather?lat=${coords?.latitude}&lon=${coords?.longitude}&lang=sp&appid=510f0eaa72c51a328e4614b9e40d2fb5`)
         .then(res => {
             //console.log(res.data.weather[0]?.description)
             setAllWeather(res?.data)
             setWeather(res.data?.weather[0])
-
         })
         .catch(error => console.log(error));
-    },[])
-
-    console.log(allWeather)
-    console.log(weather)
+    },[isCelsius])
 
     function changeUnits(){
         setIsCelsius(!isCelsius)
@@ -62,7 +51,7 @@ const Clima = () => {
                         </ul>
                     </div>
                     <div className="card-footer">
-                        <span>{allWeather.name}, {allWeather.sys?.country ? allWeather.sys?.country : "Global"}</span>
+                        <span className="city">{allWeather.name}, {allWeather.sys?.country ? allWeather.sys?.country : "Global"}</span>
                         <span>{weather.description /*allWeather.weather[0]?.description*/}</span>
                     </div>
                 </div>

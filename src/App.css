@@ -37,7 +37,7 @@ nav ul li{
   min-height: px;
 }
 
-li button{
+.search {
   background: #38a0d8;
   border: none;
   color: white;
@@ -262,14 +262,16 @@ input:checked + .slider:before {
 }
 
 .loader {
-  background: rgba(128, 128, 128, 0.75);
+  background: radial-gradient(#D5F3FF, #51B4E8);
   z-index: 100;
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  display: flex;
+  display: flexbox;
   justify-content: center;
   align-items: center;
 }
+
+

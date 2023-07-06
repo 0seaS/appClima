@@ -48,9 +48,7 @@ function App() {
         setIsLoading(false);
       }, 3000);
     })
-  }, [])
-
-
+  }, [isLoading])
 
   return (
     <>

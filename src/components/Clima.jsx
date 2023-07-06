@@ -2,7 +2,8 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 
-const Clima = ({coords}) => {
+//const Clima = ({coords}) => {
+const Clima = () => {
 
     // const [latitude, setLatitude] = useState(0)
     // const [longitude, setLongitude] = useState(0)
@@ -14,6 +15,16 @@ const Clima = ({coords}) => {
     //         setLongitude(crd.longitude)
     //     })
     // },[])
+
+    const [coords, setCoords] = useState({latitude:0, longitude:0})
+
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition((pos) => {
+            setTimeout(() => {setCoords(pos?.coords)},1000)
+            
+        })
+    }, [])
+    
 
 
     const [allWeather, setAllWeather] = useState({})
@@ -30,7 +41,7 @@ const Clima = ({coords}) => {
             setWeather(res.data?.weather[0])
         })
         .catch(error => console.log(error));
-    },[isCelsius])
+    },[coords])
 
     function changeUnits(){
         setIsCelsius(!isCelsius)

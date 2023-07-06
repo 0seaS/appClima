@@ -7,16 +7,16 @@ import { useEffect, useState } from 'react';
 
 function App() {
   
-  const [coords, setCoords] = useState({latitude:0, longitude:0})
+  //const [coords, setCoords] = useState({latitude:0, longitude:0})
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-     navigator.geolocation.getCurrentPosition((pos) => {
-      setCoords(pos?.coords)
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 3000);
-    })
+    //  navigator.geolocation.getCurrentPosition((pos) => {
+    //   setCoords(pos?.coords) 
+    // })
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
   }, [isLoading])
 
   return (
@@ -24,7 +24,7 @@ function App() {
       {isLoading && <Loader />}
       <Header></Header>
       
-      <Clima coords={coords}></Clima>
+      <Clima /*coords={coords}*/></Clima>
     </>
   )
 }

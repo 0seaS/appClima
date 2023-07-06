@@ -23,12 +23,12 @@ const Header = () => {
                     <li>Weather app</li>
                     <li><button className="search"><i className='bx bx-search-alt-2'></i></button><input type="text" placeholder='Busca una ciudad'/></li>
                     <li>
-                        <button onClick={darckMode}>
+                        {/*<button onClick={darckMode}>*/}
                             <label className="switch">
                                 <input type="checkbox" />
                                 <span className="slider round"></span>
                             </label> 
-                        </button>
+                        {/*</button>*/}
                                               
                     </li>
                 </ul>
